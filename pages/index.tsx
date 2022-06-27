@@ -40,7 +40,7 @@ const Home: NextPage = () => {
         <h5>React & React Native</h5>
         <h4>Focus on frontend applications.</h4>
         <Link href='/projects' passHref style={{ color:'#fff' }}><a><Button variant="contained" >See Projects</Button></a></Link>
-        
+        <h1>This site is work in progress !</h1>
       </main>
     </>
   )

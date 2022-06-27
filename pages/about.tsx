@@ -7,7 +7,7 @@ const About: NextPage = () => {
    return (
       <>
          <Head>
-            <title>Kristians portfolio</title>
+            <title>Kristians portfolio - About</title>
             <meta name="theme-color" content="#000000" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="icon" href="/favicon.ico" />
@@ -27,9 +27,11 @@ const About: NextPage = () => {
             <meta property="og:locale" content="en_GB" />
          </Head>
          <MyNavbar />
-         <main className='mainBackground mainContainer'>
+         <main className='mainBackground mainContainer text-center'>
 
-         
+            <h1>About me</h1>
+            <p>I can create and deploy your frontend application or website.</p>
+            <p className="mt-5">Icons used from <a href="https://icons8.com">https://icons8.com</a> to make this website</p>
 
          </main>
       </>

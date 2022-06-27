@@ -19,6 +19,7 @@ body {
 
 .mainContainer {
   width: 100vw;
+  max-width: 100%;
   flex: 1 1 auto;
 }
 

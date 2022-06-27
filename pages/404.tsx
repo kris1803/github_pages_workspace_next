@@ -1,8 +1,12 @@
 import React from "react";
 import MyNavbar from "../components/nav";
 import Head from 'next/head';
+import { NextPage } from "next";
+import Link from 'next/link';
+import { Button } from "react-bootstrap";
 
-export default function Error(): JSX.Element {
+
+const Error: NextPage = () => {
 
    return (
       <>
@@ -14,11 +18,13 @@ export default function Error(): JSX.Element {
             <link rel="icon" href="/favicon.ico" />
          </Head>
          <MyNavbar />
-         <main className="mainBackground mainContainer" >
-            <h1 style={{ textAlign: 'center', marginTop: 50 }} >
+         <main className="mainBackground mainContainer text-center d-flex flex-column align-items-center" >
+            <h1 style={{ marginTop: 50 }} >
                Sorry... Page was not found.
             </h1>
+            <Link href='/' style={{}} passHref><Button className="mt-2">Go Home</Button></Link>
          </main>
       </>
    )
 }
+export default Error;

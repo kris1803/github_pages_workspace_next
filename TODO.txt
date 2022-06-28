@@ -1,1 +1,4 @@
 - make custom buttons
+- make multi language support
+- remake hard skills page with a design
+- remake landing page

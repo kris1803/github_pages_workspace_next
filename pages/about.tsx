@@ -27,10 +27,11 @@ const About: NextPage = () => {
             <meta property="og:locale" content="en_GB" />
          </Head>
          <MyNavbar />
-         <main className='mainBackground mainContainer text-center'>
+         <main className='mainBackground mainContainer text-center pt-5'>
 
             <h1>About me</h1>
-            <p>I can create and deploy your frontend application or website.</p>
+            <h4>I can create and deploy your frontend application or website.</h4>
+            <p>This website is made with nextJs framework, and is optimised for SEO.</p>
             <p className="mt-5">Icons used from <a href="https://icons8.com">https://icons8.com</a> to make this website</p>
 
          </main>

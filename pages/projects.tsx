@@ -22,7 +22,7 @@ const Projects: NextPage = () => {
                      <Card.Title>{project.name}</Card.Title>
                      <Card.Text className="m-0 p-0" >{description}</Card.Text>
                      <Card.Text ><span className="fw-bold">Language:</span> {project.lang}</Card.Text>
-                     <Link href={'/project/' + (index + 1)}>
+                     <Link href={'/project/' + (index + 1)} passHref>
                         <Button variant="outline-success" >Open</Button>
                      </Link>
                   </Card.Body>

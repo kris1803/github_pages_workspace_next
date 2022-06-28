@@ -4,6 +4,7 @@ const nextConfig = {
   async redirects() {
     return []
   },
+  experimental: { images: { layoutRaw: true } },
 }
 
 module.exports = nextConfig

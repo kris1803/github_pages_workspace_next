@@ -1,5 +1,7 @@
 import { NextPage } from 'next';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
+import { Col, Row } from 'react-bootstrap';
+import Image from 'next/image';
 import Head from 'next/head';
 
 import projects from '../../data/projects.json';
@@ -7,17 +9,16 @@ import MyNavbar from '../../components/nav';
 
 const Project: NextPage = () => {
    const router = useRouter();
+   let valid = false;
    let query = router.query;
    let id = parseInt(query.id as string);
-   if (isNaN(id)) {
-      return (
-         <>
-            <MyNavbar />
-            <main className='mainBackground mainContainer text-center'>
-               <h1>Not valid project number.</h1>
-            </main>
-         </>
-      );
+   valid = !isNaN(id) && id > 0 && id <= projects.length;
+   let project: any = {};
+   if (valid) {
+      // do project extraction here
+      id = id - 1;
+      // picking the right project from the json file
+      project = projects[id];
    }
 
    return (
@@ -45,9 +46,34 @@ const Project: NextPage = () => {
          </Head>
          <MyNavbar />
 
-         <main className='mainBackground mainContainer'>
-
-
+         <main className='mainBackground mainContainer d-flex flex-column align-items-center justify-content-center p-0 m-0'>
+            {!valid && <h1 className='text-center'>Not valid project number.</h1>}
+            {valid && (
+               <Row className='mx-0 mb-3 p-0 w-100 bg-white' style={{ maxWidth: 1280, borderRadius: 40 }}>
+               <Col xs={12} className='d-flex justify-content-center align-items-center' style={{ height: 80, backgroundColor: '#eee', borderRadius: 40 }}>
+                  <h3 className='m-0 p-0'>{project.name}</h3>
+               </Col>
+               <Col xs={12} className='mt-3 mb-3'>
+                  <Row className='m-0 p-0 flex-row-reverse'>
+                     <Col xs={12} lg={6}>
+                        <Image src={project.img} layout='responsive' width='1920' height='1080' className='img-fluid rounded-3' alt='Project screenshot' />
+                     </Col>
+                     <Col xs={12} lg={6} className='pt-3 pb-3 d-flex align-items-center'>
+                        <p style={{ fontSize: 14 }}>{project.description}</p>
+                     </Col>
+                     <Col xs={12} className='mt-3 mb-3'>
+                        <div className='d-flex'>
+                           <Image src='/img/assets/language.png' width='26' height='25' layout='raw' alt='' className='me-2' /><p className='m-0 p-0' >Language : {project.lang}</p>
+                        </div>
+                        <div className='d-flex mt-3'>
+                           <Image src='/img/assets/stack.png' layout='raw' width='26' height='25' alt='' className='me-2' />
+                           <p className='m-0 p-0'>Technologies : {project.stack.join(', ')}</p>
+                        </div>
+                     </Col>
+                  </Row>
+               </Col>
+            </Row>)
+            }
          </main>
       </>
    )

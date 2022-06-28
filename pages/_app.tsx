@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     
     // @ts-ignore
-    import("bootstrap/dist/js/bootstrap.min.js");
+    //import("bootstrap/dist/js/bootstrap.min.js");
   });
 
   return <Component {...pageProps} />

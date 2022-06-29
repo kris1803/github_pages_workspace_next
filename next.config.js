@@ -8,6 +8,7 @@ const nextConfig = {
     }
   },
   images : {
+    loader: 'custom',
     unoptimized: true,
   }
 }

@@ -3,9 +3,11 @@ import { useRouter } from 'next/router';
 import { Col, Row } from 'react-bootstrap';
 import Image from 'next/image';
 import Head from 'next/head';
+import { motion } from "framer-motion";
 
 import projects from '../../data/projects.json';
 import MyNavbar from '../../components/nav';
+import variants from '../../data/page-animation';
 
 const Project: NextPage = () => {
    const router = useRouter();
@@ -45,8 +47,14 @@ const Project: NextPage = () => {
             <meta property="og:locale" content="en_GB" />
          </Head>
          <MyNavbar />
-
-         <main className='mainBackground mainContainer d-flex flex-column align-items-center justify-content-center p-0 m-0'>
+         <motion.main
+            initial="hidden"
+            animate="enter"
+            exit='exit'
+            variants={variants}
+            transition={{ type: 'linear' }}
+            className='mainBackground mainContainer d-flex flex-column align-items-center justify-content-center p-0 m-0'
+         >
             {!valid && <h1 className='text-center'>Not valid project number.</h1>}
             {valid && (
                <Row className='mx-0 mb-3 p-0 w-100 bg-white' style={{ maxWidth: 1280, borderRadius: 40 }}>
@@ -56,25 +64,25 @@ const Project: NextPage = () => {
                <Col xs={12} className='mt-3 mb-3'>
                   <Row className='m-0 p-0 flex-row-reverse'>
                      <Col xs={12} lg={6}>
-                        <Image unoptimized src={project.img} layout='responsive' width='1920' height='1080' className='img-fluid rounded-3' alt='Project screenshot' />
+                        <Image unoptimized src={project.img} layout='responsive' width='1920' height='980' className='img-fluid rounded-3' alt='Project screenshot' />
                      </Col>
                      <Col xs={12} lg={6} className='pt-3 pb-3 d-flex align-items-center'>
-                        <p style={{ fontSize: 14 }}>{project.description}</p>
+                        <p style={{ fontSize: 14 }}>{`${project.description}`}</p>
                      </Col>
                      <Col xs={12} className='mt-3 mb-3'>
                         <div className='d-flex'>
-                           <Image unoptimized src='/img/assets/language.png' width='26' height='25' layout='raw' alt='' className='me-2' /><p className='m-0 p-0' >Language : {project.lang}</p>
+                           <Image unoptimized src='/img/assets/language.png' width='28' height='25' layout='fixed' alt='' />
+                           <p className='my-0 ms-2 p-0' >Language : {project.lang}</p>
                         </div>
                         <div className='d-flex mt-3'>
-                           <Image unoptimized src='/img/assets/stack.png' layout='raw' width='26' height='25' alt='' className='me-2' />
-                           <p className='m-0 p-0'>Technologies : {project.stack.join(', ')}</p>
+                           <Image unoptimized src='/img/assets/stack.png' layout='fixed' width='28' height='25' alt='' />
+                           <p className='my-0 ms-2 p-0'>Technologies : {project.stack.join(', ')}</p>
                         </div>
                      </Col>
                   </Row>
                </Col>
-            </Row>)
-            }
-         </main>
+            </Row> )}
+         </motion.main>
       </>
    )
 }

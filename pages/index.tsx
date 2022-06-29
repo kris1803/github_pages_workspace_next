@@ -33,12 +33,12 @@ const Home: NextPage = () => {
       <MyNavbar />
       <main className={"mainBackground mainContainer d-flex flex-column align-items-center p-0 m-0 text-center"}>
         <h1 className="mt-5">Home</h1>
-        <h2>Kristians</h2>
-        <h3>Javascript Fullstack Software Engineer</h3>
-        <h3>Web & mobile</h3>
-        <h5>React & React Native</h5>
-        <h4>Focus on frontend applications.</h4>
-        <Link href='/projects' passHref style={{ color:'#fff' }}><a>See Projects</a></Link>
+        <h2>Hello! I am Kristians</h2>
+        <h3>A Fullstack Javascript Software Engineer.</h3>
+        <h4>For Web & mobile applications</h4>
+        <h5>with React & React Native</h5>
+        <h5>and with focus on frontend applications.</h5>
+        <Link href='/projects' passHref style={{ color:'#fff' }}><a>See my Projects</a></Link>
         <h1>This site is work in progress !</h1>
       </main>
     </>

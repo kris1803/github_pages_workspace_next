@@ -1,7 +1,10 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import MyNavbar from '../components/nav';
 import { Row, Col } from 'react-bootstrap';
+import { motion } from "framer-motion";
+
+import variants from '../data/page-animation';
+import MyNavbar from '../components/nav';
 
 const HardSkills: NextPage = () => {
    const frontend = [
@@ -12,14 +15,17 @@ const HardSkills: NextPage = () => {
       'React-Native (Expo)',
       'Material-UI',
       'Next.js',
-      'axios'
+      'axios',
+      'figma'
    ];
    const backend = [
       'Node.js',
       'Express',
       'MongoDB',
       'Mongoose',
-   ]
+      'REST Api',
+      'axios'
+   ];
    const production = [
       'Git & Github',
       'Github pages',
@@ -54,8 +60,15 @@ const HardSkills: NextPage = () => {
             <meta property="og:locale" content="en_GB" />
          </Head>
          <MyNavbar />
-         <main className='mainBackground mainContainer p-0 d-flex flex-column justify-content-center align-items-center'>
-            <Row className='w-100' >
+         <motion.main
+            initial="hidden"
+            animate="enter"
+            exit='exit'
+            variants={variants}
+            transition={{ type: 'linear' }}
+            className='mainBackground mainContainer p-0 d-flex flex-column justify-content-center align-items-center'
+         >
+            <Row className='w-100 m-0' >
                <Col xs={12} className="text-center mb-3">
                   <h1>Hard Skills</h1>
                </Col>
@@ -84,8 +97,7 @@ const HardSkills: NextPage = () => {
                   })}
                </Col>
             </Row>
-
-         </main>
+         </motion.main>
       </>
    )
 }

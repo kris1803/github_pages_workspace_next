@@ -1,6 +1,9 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import { motion } from "framer-motion";
+
 import MyNavbar from '../components/nav';
+import variants from '../data/page-animation';
 
 const About: NextPage = () => {
 
@@ -27,14 +30,20 @@ const About: NextPage = () => {
             <meta property="og:locale" content="en_GB" />
          </Head>
          <MyNavbar />
-         <main className='mainBackground mainContainer text-center pt-5'>
+         <motion.main
+            initial="hidden"
+            animate="enter"
+            exit='exit'
+            variants={variants}
+            transition={{ type: 'linear' }}
+            className='mainBackground mainContainer text-center pt-5' >
 
             <h1>About me</h1>
             <h4>I can create and deploy your frontend application or website.</h4>
             <p>This website is made with nextJs framework, and is optimised for SEO.</p>
-            <p className="mt-5">Icons used from <a href="https://icons8.com">https://icons8.com</a> to make this website</p>
+            <p className="mt-5">Icons used from <a target='_blank' rel='noreferrer' href="https://icons8.com">https://icons8.com</a> to make this website</p>
 
-         </main>
+         </motion.main>
       </>
    )
 }

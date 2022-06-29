@@ -11,16 +11,16 @@ export default function MyNavbar(): JSX.Element {
             <Col xs={12} lg={8} >
                <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                   <Container>
-                     <Link href='/' className='navbar-brand' passHref>
+                     <Link scroll={false} href='/' className='navbar-brand' passHref>
                         <Navbar.Brand className="navbar-brand" >Kris</Navbar.Brand>
                      </Link>
                      
                      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                      <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                           <Link aria-current="page" passHref href="/projects"><a className="nav-link">Projects</a></Link>
-                           <Link href="/hardskills" passHref ><a className="nav-link">HardSkills</a></Link>
-                           <Link href="/about" passHref ><a className="nav-link">About</a></Link>
+                           <Link scroll={false} aria-current="page" passHref href="/projects"><a className="nav-link">Projects</a></Link>
+                           <Link scroll={false} href="/hardskills" passHref ><a className="nav-link">HardSkills</a></Link>
+                           <Link scroll={false} href="/about" passHref ><a className="nav-link">About</a></Link>
                         </Nav>
 
                         <Nav className="py-1">

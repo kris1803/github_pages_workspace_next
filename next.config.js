@@ -4,6 +4,7 @@ const nextConfig = {
   experimental: {
     images: {
       loader: 'custom',
+      layoutRaw : true,
       unoptimized: true,
     }
   },

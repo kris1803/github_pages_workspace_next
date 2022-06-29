@@ -1,10 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  async redirects() {
-    return []
+  experimental: {
+    images: {
+      loader: 'custom',
+      unoptimized: true,
+    }
   },
-  experimental: { images: { layoutRaw: true } },
+  images : {
+    unoptimized: true,
+  }
 }
 
 module.exports = nextConfig

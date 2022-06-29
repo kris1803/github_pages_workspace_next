@@ -56,17 +56,17 @@ const Project: NextPage = () => {
                <Col xs={12} className='mt-3 mb-3'>
                   <Row className='m-0 p-0 flex-row-reverse'>
                      <Col xs={12} lg={6}>
-                        <Image src={project.img} layout='responsive' width='1920' height='1080' className='img-fluid rounded-3' alt='Project screenshot' />
+                        <Image unoptimized src={project.img} layout='responsive' width='1920' height='1080' className='img-fluid rounded-3' alt='Project screenshot' />
                      </Col>
                      <Col xs={12} lg={6} className='pt-3 pb-3 d-flex align-items-center'>
                         <p style={{ fontSize: 14 }}>{project.description}</p>
                      </Col>
                      <Col xs={12} className='mt-3 mb-3'>
                         <div className='d-flex'>
-                           <Image src='/img/assets/language.png' width='26' height='25' layout='raw' alt='' className='me-2' /><p className='m-0 p-0' >Language : {project.lang}</p>
+                           <Image unoptimized src='/img/assets/language.png' width='26' height='25' layout='raw' alt='' className='me-2' /><p className='m-0 p-0' >Language : {project.lang}</p>
                         </div>
                         <div className='d-flex mt-3'>
-                           <Image src='/img/assets/stack.png' layout='raw' width='26' height='25' alt='' className='me-2' />
+                           <Image unoptimized src='/img/assets/stack.png' layout='raw' width='26' height='25' alt='' className='me-2' />
                            <p className='m-0 p-0'>Technologies : {project.stack.join(', ')}</p>
                         </div>
                      </Col>

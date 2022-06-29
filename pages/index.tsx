@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { Button } from '@mui/material';
 
 import MyNavbar from '../components/nav';
 import Link from 'next/link';
@@ -39,7 +38,7 @@ const Home: NextPage = () => {
         <h3>Web & mobile</h3>
         <h5>React & React Native</h5>
         <h4>Focus on frontend applications.</h4>
-        <Link href='/projects' passHref style={{ color:'#fff' }}><a><Button variant="contained" >See Projects</Button></a></Link>
+        <Link href='/projects' passHref style={{ color:'#fff' }}><a>See Projects</a></Link>
         <h1>This site is work in progress !</h1>
       </main>
     </>
